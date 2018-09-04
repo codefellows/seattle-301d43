@@ -10,3 +10,27 @@ button {
 .form-element {
   margin-bottom: 1em;
 }
+
+h1 {
+  background-color: red;
+  font-size: 4em;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    background-color: seagreen;
+    font-size: 3em;
+  }
+
+  button {
+    background-color: lightblue;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  h1 {
+    background-color: sandybrown;
+    font-size: 2em;
+  }
+}
