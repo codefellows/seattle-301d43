@@ -73,7 +73,7 @@ The navigator (who will become the new driver):
 Switched to a new branch 'driver-navigator'`
   - Type `ls` from terminal to confirm <driverName-navigatorName> folder exists.
   - If folder does not exist then try `git branch -b <driverName-navigatorName> origin/<driverName-navigatorName>`
-  - If *still* not working then ask TA and/or refer to Tracking Branches section of [Git - Remote Branches] (https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches)
+  - If *still* not working then ask TA and/or refer to Tracking Branches section of [Git - Remote Branches](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches).
   - Open the code in your editor and resume editing the code.
   - Add, commit, push as you have done before.
 
