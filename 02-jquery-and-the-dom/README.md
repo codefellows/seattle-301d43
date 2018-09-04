@@ -12,8 +12,10 @@
 ## Daily Plan
 <!-- Below is a template. Please delete, change, update as you see fit... -->
 - Notes:
-  - All the things are awesome!
-
+  - Orientation from Rachel
+  - Check in on Career Coaching assignments
+  - you're all so cool, i missed you
+  - Please let me know if Canvas seems weird, because Canvas is being weird.
 - Code Review
 - New Material
 - Code Demos
@@ -27,4 +29,3 @@
 * Traverse the DOM tree with `$.parents()`, `$.children()`, `$.find()`.
 * Differentiate between certain methods & the process of chaining.
 * Understand proper `<script>` loading order in HTML.
-
