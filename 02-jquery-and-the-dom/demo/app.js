@@ -1,6 +1,5 @@
 'use strict';
 /* global $ */
-//*****basic selectors*****//
 
 //element
 $('li'); //returns an array of all matching elements
