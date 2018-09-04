@@ -16,6 +16,8 @@
   - Check in on Career Coaching assignments
   - you're all so cool, i missed you
   - Please let me know if Canvas seems weird, because Canvas is being weird.
+  - Where to find readings
+  - Code challenges!
 - Code Review
 - New Material
 - Code Demos
