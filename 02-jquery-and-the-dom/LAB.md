@@ -1,9 +1,4 @@
 ![CF](https://camo.githubusercontent.com/70edab54bba80edb7493cad3135e9606781cbb6b/687474703a2f2f692e696d6775722e636f6d2f377635415363382e706e67) Lab 02: jQuery and the DOM
-===
-
-## Code Wars Challenge
-
-Complete [today's Kata](https://www.codewars.com/kata/my-head-is-at-the-wrong-end) and follow the submission instructions from Lab 01.
 
 ## Lab 02
 Welcome to your first lab assignment for Code 301!!
