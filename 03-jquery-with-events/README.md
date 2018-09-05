@@ -14,8 +14,8 @@
 
 ## Daily Plan
 <!-- Below is a template. Please delete, change, update as you see fit... -->
-- Notes:
-  - Happy Wednesday!
+- Announcements:
+  - Code challenges: how did they go? Cut yourself off at 2 hours from now on.
 - Code Review
 - New Material
 - Code Demos
