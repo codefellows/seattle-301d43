@@ -45,6 +45,6 @@ $('ul').append($newLi);
 $('button').remove();
 
 //run a command as soon as the DOM loads
-$(document).ready(function() {
+$(document).ready(() => {
   alert('the DOM is ready now!');
 });
