@@ -1,4 +1,4 @@
-# seattle-301d34
+# seattle-301d43
 *Class lecture repo for seattle-301d43. Lead Instructor: Michelle Ferreirae*
 
 <a id="top"></a>
@@ -124,7 +124,7 @@ In teams, students create a web application that demonstrates command of all of 
 
 ##### One On Ones
 
-- The instructor will do one-on-one meetings with each student during Week 2 and possibly also during Week 4.
+- The instructor will do one-on-one meetings with each student during Week 2.
 
 ##### Reading Assignments
 
