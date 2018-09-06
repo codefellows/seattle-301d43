@@ -2,14 +2,14 @@
 
 //nav handler
 $('nav a').on('click', function() {
-  let $whereToGo = $(this).data('tab');
-  // what is $whereToGo
+  let whereToGo = $(this).data('tab');
+  // what is whereToGo
   //gives us 'delegation' or 'attributes'
-  console.log('$where to go', $whereToGo);
+  console.log('$where to go', whereToGo);
   $('.tab-content').hide();
   // debugger;
   //we want $('#delegation')
-  $('#' + $whereToGo).fadeIn(750);
+  $(`#${whereToGo}`).fadeIn(750);
 });
 
 //event logger
@@ -30,7 +30,7 @@ $('#menu1 li').on('click', logTarget);
 
 //delegated - event is bound to parent
 //'li' is specified in .on()
-$('#menu2').on('click', 'li', logTarget);
+$('#menu2').on('click', '.menu-item', logTarget);
 
 //button handlers
 $('button[name=adder1]').on('click', function() {
@@ -60,9 +60,9 @@ $('input[name=check]').on('change', function() {
 
 //select box filtering
 $('select[name="icecream"]').on('change', function() {
-  let $selection = $(this).val();
+  let selection = $(this).val();
   $('img').hide();
-  $('img[data-flavor="' + $selection + '"]').show();
+  $('img[data-flavor="' + selection + '"]').show();
 });
 
 //DOM-ready function
