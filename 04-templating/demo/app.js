@@ -10,13 +10,24 @@ const Song = function(title, artist, genre, imageUrl) {
 };
 Song.allSongs = [];
 
+const source = $('#song-template').html();
+const template = Handlebars.compile(source);
+
 // set up instance methods
+// Song.prototype.toHtmlString = function() {
+//   return `<div style="background-image: url(${this.imageUrl})">
+//     <h3>${this.title}</h3>
+//     <h4>${this.artist}</h4>
+//     <h6>${this.genre}</h6>
+//   </div>`;
+// };
+
 Song.prototype.toHtmlString = function() {
-  return this.title;
+  return template(this);
 };
 
 // create song instances
-new Song('Shut Up And Dance', 'Walk the Moon', 'rock', 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Walk_the_Moon_-_Talking_Is_Hard.png/220px-Walk_the_Moon_-_Talking_Is_Hard.png');
+new Song('Shut Up And Dance', 'Walk the Moon', '<strong>rock</strong>', 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Walk_the_Moon_-_Talking_Is_Hard.png/220px-Walk_the_Moon_-_Talking_Is_Hard.png');
 new Song('Gang of Rhythm', 'Walk Off the Earth', 'indie', 'https://upload.wikimedia.org/wikipedia/en/3/35/Walk_off_the_Earth_-_REVO.jpg');
 new Song('Dorothy', 'Polo and Pan', 'electronic', 'https://f4.bcbits.com/img/a2508153936_16.jpg');
 new Song('Take Five', ' Dave Brubeck Quartet', 'jazz', 'https://upload.wikimedia.org/wikipedia/en/e/e5/Time_out_album_cover.jpg');

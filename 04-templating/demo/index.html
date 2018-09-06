@@ -16,6 +16,13 @@
     <h4>Songs</h4>
     <div id="songs-container">
       <!-- songs go here -->
+      <script id="song-template" type="text/x-handlebars-template">
+        <div style="background-image: url({{imageUrl}})">
+          <h3>{{title}}</h3>
+          <h4>{{artist}}</h4>
+          <h6>{{{genre}}}</h6>
+        </div>
+      </script>
     </div>
   </main>
   <script
@@ -23,6 +30,7 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous">
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
