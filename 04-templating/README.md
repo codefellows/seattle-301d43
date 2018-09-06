@@ -13,7 +13,7 @@
 ## Daily Plan
 <!-- Below is a template. Please delete, change, update as you see fit... -->
 - Notes:
-  - All the things are awesome!
+  - Sign up for 1:1s!
 
 - Code Review
 - New Material
