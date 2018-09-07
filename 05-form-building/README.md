@@ -3,11 +3,11 @@
 ## Overview
 <!-- Provide a general overview of the daily concepts and processes that will be covered in lectures and labs -->
 
-Today we'll code together in an in-class workshop to wire up a new page in our blog app. This is done in lieu of a pair-programming assignment. You will individually fork/clone the lab code, get it working condition, and submit a pull request by the time of our next class, just as you have been doing with the paired lab assignments.
+Today we'll code together in [an in-class workshop](https://github.com/codefellows-seattle-301d43/05-form-building) to wire up a new page in our blog app. This is done in lieu of a pair-programming assignment. You will individually fork/clone the lab code, get it working condition, and submit a pull request by the time of our next class, just as you have been doing with the paired lab assignments.
 
 Note that we probably will not get to 100% functionality in our workshop today *(gotta leave y'all a little bit of work to do, right?)*, and also that there are optional stretch goals.
 
-We'll not work to a schedule, but instead work for an hour or so, take a break, etc., until we finish (or, more accurately, get as close to finished as we're going to get ;-) within our available time.
+We'll not work to a schedule, but instead work for an hour or so, take a break, etc., until we finish (or, more accurately, get as close to finished as we're going to get :D ) within our available time.
 
 ## Readings
 <!-- List of readings required for this content; readings being completed by the start of this lecture -->
@@ -17,11 +17,10 @@ We'll not work to a schedule, but instead work for an hour or so, take a break, 
 <!-- Below is a template. Please delete, change, update as you see fit... -->
 - Notes:
   - Make sure you've signed up for a 1:1!
-
+  - Presentation video is still :/
 - Code Review
 - New Material
-- Code Demos
-- Lab Preview
+- [Lab Workshop](https://github.com/codefellows-seattle-301d43/05-form-building)
 
 ## Learning Objectives
 <!--
