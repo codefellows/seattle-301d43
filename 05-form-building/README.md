@@ -16,8 +16,9 @@ We'll not work to a schedule, but instead work for an hour or so, take a break, 
 ## Daily Plan
 <!-- Below is a template. Please delete, change, update as you see fit... -->
 - Notes:
-  - Make sure you've signed up for a 1:1!
-  - Presentation video is still :/
+  - Make sure you've signed up for a 1:1.
+  - Presentation video is up!
+  - Don't forget that partner power hour is required.
 - Code Review
 - New Material
 - [Lab Workshop](https://github.com/codefellows-seattle-301d43/05-form-building)
