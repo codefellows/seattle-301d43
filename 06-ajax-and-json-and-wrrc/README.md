@@ -16,7 +16,9 @@
 
 ## Daily Plan
 <!-- Below is a template. Please delete, change, update as you see fit... -->
-
+- Announcements
+  - Survey feedback review
+  - Don't forget about 1:1s!
 - Code Review
 - New Material
 - Code Demos
