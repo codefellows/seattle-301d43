@@ -25,8 +25,6 @@ app.get('/', function(request, response) {
 
 // DB routes for CRUD operations
 app.get('/events', function(request, response) {
-  // TODO: fill in this query to get all the data about events
-  // note: client is the postgres client
   client.query('SELECT * FROM events;')
     .then(function(data) {
       response.send(data);
@@ -38,12 +36,13 @@ app.get('/events', function(request, response) {
 
 app.post('/events', function(request, response) {
   // TODO: fill in this query
-  client.query(` INSERT INTO events (title, date, host, tickets) VALUES ( $1, $2, $4, $3 );`,
+  console.log(request.body);
+  client.query(` INSERT INTO events (title, date, host, tickets) VALUES ( $1, $2, $3, $4 );`,
     [
       request.body.title,
       request.body.date,
-      request.body.tickets,
-      request.body.host
+      request.body.host,
+      request.body.tickets
     ]
   )
     .then(function(data) {
@@ -68,8 +67,8 @@ function createTable() {
       id SERIAL PRIMARY KEY,
       title VARCHAR(256),
       date DATE,
-      hostname VARCHAR(256),
-      ticketsavailable INT
+      host VARCHAR(256),
+      tickets INT
     );`
   )
     .then(function(response) {
