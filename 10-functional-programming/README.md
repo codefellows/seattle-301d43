@@ -28,6 +28,15 @@
 - [JavaScript Functional Programming — map, filter and reduce](https://medium.com/jsguru/javascript-functional-programming-map-filter-and-reduce-846ff9ba492d)
 - [JavaScript’s Map, Reduce, and Filter](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
 
+
+## Heroku Deploy Steps
+
+1. Create a repo with your server and `package.json` files at the root. Ensure it's working.
+2. Modify your code to have important Heroku modifications. (Environment variables for port and db connection string)
+3. Create Heroku app
+4. Make sure Heroku has Postgres set up.
+5. Deploy!
+
 ## Learning Objectives
 <!--
 ABCD:
@@ -41,5 +50,4 @@ ABCD:
 
 * Understand advantages of functional programming and reasons for its recent rise in popularity
 * Correctly use **.forEach(), .map(), .filter(), .reduce()** array methods to explore a data set
-* Construct modularity with IIFE patterns
 
