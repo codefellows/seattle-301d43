@@ -13,7 +13,9 @@
 ## Daily Plan
 <!-- Below is a template. Please delete, change, update as you see fit... -->
 - Notes:
-  - All the things are awesome!
+  - Be kind to Partner Power Hour presenters. Stay the whole time.
+  - This week was hard. How are y'all doing?
+  - Today is a review/hodgepodge day.
 
 - Code Review
 - New Material
