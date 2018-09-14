@@ -1,5 +1,7 @@
 'use strict';
 
+// FERREIRAE
+
 // many thanks to JB for providing inspiration on this demo
 
 const pg = require('pg');
@@ -63,15 +65,23 @@ app.listen(PORT, function() {
 ////// Create database table helper function //////
 function createTable() {
   client.query(`
-    CREATE TABLE IF NOT EXISTS events(
+    CREATE TABLE IF NOT EXISTS hosts(
       id SERIAL PRIMARY KEY,
-      title VARCHAR(256),
-      date DATE,
-      host VARCHAR(256),
-      tickets INT
-    );`
-  )
-    .then(function(response) {
-      console.log(response);
-    });
+      name VARCHAR(256),
+      email VARCHAR(256)
+    );
+  `).then(() => {
+    client.query(`
+      CREATE TABLE IF NOT EXISTS events(
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(256),
+        date DATE,
+        host INT REFERENCES hosts(id),
+        tickets INT
+      );`
+    )
+      .then(function(response) {
+        console.log(response);
+      });
+  })
 }
