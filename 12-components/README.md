@@ -6,9 +6,13 @@ Today we will discuss componentization of our code. Although we will have more f
 
 ## Daily Plan
 
-- Warm-up exercise
+- Announcements
+    - Many friends are coming to visit tomorrow!
+        - Amanda, to talk about 401 things and answer questions (with Brian)
+        - Michelle's friends, who work at Facebook, to say hello & answer questions
 - Review code challenges
 - Code review of lab assignment
+- Warm-up exercise
 - Componentization of code into modules
 - Code Demo
 - Lab Preview
