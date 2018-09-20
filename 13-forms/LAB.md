@@ -81,8 +81,7 @@ Then the user should be directed to the detail view with a success message displ
 
 #### How are we implementing it?
 
-- Add an endpoint for a `POST` request to `/books`. The callback should add the new book to the database. The callback should include a second query to retrieve the newly-added book from the database and display the details to the user.
-- Use the same detail view from lab 12. Display a message to the user to indicate that the book was successfully added to the database.
+- Add an endpoint for a `POST` request to `/books`. The callback should add the new book to the database. The query should use `RETURNING` to retrieve the newly-added book's `id` from the database and display the details to the user.
 - Redeploy your application.
 
 ### Feature 3: Continue to style the application
