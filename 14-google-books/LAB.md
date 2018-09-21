@@ -5,7 +5,7 @@
 - [Google Books API Documentation](https://developers.google.com/books/docs/v1/getting_started)
 - [Superagent](https://visionmedia.github.io/superagent/)
 
-- [Book app wireframes](./wireframes)
+- [Book app wireframes](../11-ejs/wireframes)
 
 ## Configuration
 
