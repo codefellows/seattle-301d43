@@ -397,6 +397,7 @@ Technical merit is graded based on the following criteria:
   - Uses domain models to encapsulate data and behavior, such as objects and constructors
   - Uses jQuery to respond to user events and process user input, as appropriate
   - Contains no unnecessary or commented-out code
+  - Strongly encouraged: uses an external API.
 
 - Data is persisted in a SQL database
   - PostgreSQL database provisioned on the Heroku instance
