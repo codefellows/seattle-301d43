@@ -3,6 +3,103 @@
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 1
 //
+// You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies.
+// Pat has data for the hourly sales of cookies per hour for each store.
+// He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
+//
+// Write a function named grandTotal that adds up the cookies sales for each hour of operation
+// for all of the stores combined. The first element in the hourlySales array should be
+// the sum of the cookies sold in the 9:00 hour at all five stores combined.
+//
+// For this example, the total at 9:00 is 17 + 26 + 7 + 5 + 33, or 88 total cookies.
+//
+// Return the array of total number of cookies sold per hour for all of the stores combined.
+// ------------------------------------------------------------------------------------------------
+
+const hoursOpen = ['9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.', '8 p.m.'];
+
+const firstPike = [17, 18, 23, 24, 24, 12, 13, 27, 30, 20, 24, 18];
+const seaTac = [26, 5, 5, 59, 23, 39, 38, 20, 30, 7, 59, 43];
+const seattleCenter = [7, 14, 19, 22, 15, 4, 23, 27, 28, 23, 1, 29];
+const capHill = [5, 85, 58, 51, 50, 13, 33, 32, 47, 94, 31, 62];
+const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
+
+const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
+
+const grandTotal = (stores) => {
+  //<solution>
+  const hourlySales = [];
+
+  for (let i = 0; i < stores[0].length; i++) {
+    let hourlyTotal = 0;
+    for (let j = 0; j < stores.length; j++) {
+      hourlyTotal += stores[j][i];
+    }
+    hourlySales.push(hourlyTotal);
+  }
+
+  return hourlySales;
+  //</solution>
+
+}
+
+
+
+// ------------------------------------------------------------------------------------------------
+// CHALLENGE 2
+//
+// Pat has decided that he would also like to organize his data as objects containing
+// the number of cookies sold per hour and the time.
+// Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
+//
+// Write a function named salesData that uses forEach to iterate over the hourlySales array
+// and create an object for each hour. Return an array of the formatted data.
+// ------------------------------------------------------------------------------------------------
+
+const salesData = (hours, data) => {
+  //<solution>
+  const salesOverview = [];
+
+  data.forEach((value, idx) => {
+    salesOverview.push({
+      sales: `${value} cookies`,
+      time: hours[idx]
+    })
+  })
+
+  return salesOverview;
+  //</solution>
+};
+
+// ------------------------------------------------------------------------------------------------
+// CHALLENGE 3
+//
+// Write a function named giveValentines that takes in an array of names.
+// The function should iterate over the array and ensure that each person
+// gives a Valentine to every other person in the array, except themself.
+//
+// Create a message for each valentine exchange following this format:
+// "Jerry gives a Valentine to Elaine."
+// Use template literals, no string concatenation. Return an array of messages.
+// ------------------------------------------------------------------------------------------------
+
+const giveValentines = (list) => {
+  //<solution>
+  const trackValentines = [];
+  for (let i = 0; i <= list.length - 1; i++) {
+    for (let j = 0; j <= list.length - 1; j++) {
+      if (list[i] === list[j]) { continue; }
+      trackValentines.push(`${list[i]} gives a Valentine to ${list[j]}.`);
+    }
+  }
+
+  return trackValentines;
+  //</solution>
+};
+
+// ------------------------------------------------------------------------------------------------
+// CHALLENGE 4
+//
 // Write a function named findFourteen that returns the number 14 from the nested array.
 // Hint: refresh on how to access elements at a specific index in an array.
 // ------------------------------------------------------------------------------------------------
@@ -16,7 +113,7 @@ const findFourteen = (array) => {
 }
 
 // ------------------------------------------------------------------------------------------------
-// CHALLENGE 2
+// CHALLENGE 5
 //
 // Write a function named howManyTreats that will return the quantity of treats
 // you need to pick up from the pet store today from this array.
@@ -41,7 +138,7 @@ const howManyTreats = (arr) => {
 }
 
 // ------------------------------------------------------------------------------------------------
-// CHALLENGE 3
+// CHALLENGE 6
 //
 // Write a function named battleship that accepts a 2D array and two numbers, a row coordinate and a column coordinate.
 // Return "hit" or "miss" depending on if there's part of a boat at that position in the array.
@@ -68,7 +165,7 @@ const battleship = (board, row, col) => {
 }
 
 // ------------------------------------------------------------------------------------------------
-// CHALLENGE 4
+// CHALLENGE 7
 //
 // Write a function named calculateProduct that takes in a two-dimensional array of numbers,
 // multiplies all of the numbers in each array, and returns the final product.
@@ -91,7 +188,7 @@ const calculateProduct = (numbers) => {
 }
 
 // ------------------------------------------------------------------------------------------------
-// CHALLENGE 5
+// CHALLENGE 8
 //
 // Write a function named averageDailyTemperature that accepts a two-dimensional array representing
 // average daily temperatures grouped week-by-week.
@@ -122,7 +219,7 @@ const averageDailyTemperature = (weather) => {
 }
 
 // ------------------------------------------------------------------------------------------------
-// CHALLENGE 6
+// CHALLENGE 9
 //
 // Write a function named lowestWeeklyAverage that accepts a two-dimensional array
 // of daily temperatures grouped week-by-week.
@@ -162,7 +259,7 @@ const lowestWeeklyAverage = (weather) => {
 }
 
 // ------------------------------------------------------------------------------------------------
-// CHALLENGE 7
+// CHALLENGE 10
 //
 // Write a function called excel that accepts a string representing rows and columns.
 // Rows are seperated by newline "\n" characters. Columns are seperated by spaces.
@@ -204,128 +301,6 @@ const excel = (str) => {
   //</solution>
 }
 
-// ------------------------------------------------------------------------------------------------
-// CHALLENGE 8
-//
-// Write a function named detectTicTacToeWin that accepts a 2D array of strings. Each string is
-// guaranteed to be either "X", "O" or an empty string. Your function should check to see if
-// any row, column, or either diagonal has three matching "X" or "O" symbols (non-empty strings)
-// three-in-a-line. Your function should return either true or false to indicate if
-// someone won the game.
-//
-// Instead of trying to write crazy for loops to automate checking the rows, columns and diagonals
-// consider writing one helper function that accepts three coordinate pairs and checks the values
-// of the array at those locations. For instance helpCheck(row1, col1, row2, col2, row3, col3).
-// Writing that helpCheck function to check evey possible win line is way easier than writing for loops!
-//
-// Here is a sample board:
-// [
-//   ['X', '', 'O'],
-//   ['X', 'O', ''],
-//   ['X', 'O', 'X'],
-// ];
-// ------------------------------------------------------------------------------------------------
-
-const detectTicTacToeWin = (board) => {
-  //<solution>
-  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
-    return board[row1][col1] === board[row2][col2] &&
-           board[row2][col2] === board[row3][col3];
-  }
-  let isWin = false;
-  isWin = isWin || helpCheck(0, 0, 0, 1, 0, 2); // top row
-  isWin = isWin || helpCheck(1, 0, 1, 1, 1, 2); // middle row
-  isWin = isWin || helpCheck(2, 0, 2, 1, 2, 2); // last row
-
-  isWin = isWin || helpCheck(0, 0, 1, 0, 2, 0); // left column
-  isWin = isWin || helpCheck(0, 1, 1, 1, 2, 1); // middle column
-  isWin = isWin || helpCheck(0, 2, 1, 2, 2, 2); // right column
-
-  isWin = isWin || helpCheck(0, 0, 1, 1, 2, 2); // forward slash
-  isWin = isWin || helpCheck(2, 0, 1, 1, 0, 2); // back slash
-
-  return isWin;
-  //</solution>
-}
-
-// ------------------------------------------------------------------------------------------------
-// CHALLENGE 9
-//
-// Write a function called minesweeper that accepts a 2D array representing a game of minesweeper.
-// The function should create a new array the same size as the initial array. Do not modify the original array.
-//
-// Each cell contains only either `null` or the string "*" to represent a bomb.
-// Your function should return a 2D array where each cell is a number that represents
-// how many bombs that cells is touching.
-// Cells that do not touch any bomb should contain a zero.
-// Cells that contain a bomb themselves should contain a 9.
-//
-// Consider writing a helper function getCellValue(arr, row, col) that returns either the value at the
-// cell or `null` if the value is out of the bounds of the array (going off the top, bottom, left or right).
-// This helper function allows you easier iterate through the 2D array checking surrounding cells from
-// one cell location without worrying about accessing things outside of the array.
-//
-// Here is a sample board:
-// [
-//   [ null, null, null, null, '*' ],
-//   [ null, null, null, null, '*' ],
-//   [ '*', null, null, null, null ],
-//   [ null, null, null, '*', null ],
-//   [ null, '*', null, null, null ],
-// ];
-// ------------------------------------------------------------------------------------------------
-
-const minesweeper = (board) => {
-  //<solution>
-  const getValue = (row, col) => {
-    if (row < 0 || row >= board.length) {
-      return null;
-    }
-    if (col < 0 || col >= board[row].length) {
-      return null;
-    }
-    return board[row][col];
-  }
-
-  const mineValue = (row, col) => {
-    if (getValue(row, col) === null) {
-      return 0;
-    }
-    return 1;
-  }
-
-  const newBoard = [];
-  board.forEach((row, rowi) => {
-    const newRow = [];
-    row.forEach((col, coli) => {
-      if (board[rowi][coli]) {
-        newRow.push(9);
-      } else {
-        let mines = 0;
-
-        // top row
-        mines += mineValue(rowi - 1, coli - 1);
-        mines += mineValue(rowi - 1, coli);
-        mines += mineValue(rowi - 1, coli + 1);
-
-        // left / right
-        mines += mineValue(rowi, coli - 1);
-        mines += mineValue(rowi, coli + 1);
-
-        // bottom row
-        mines += mineValue(rowi + 1, coli - 1);
-        mines += mineValue(rowi + 1, coli);
-        mines += mineValue(rowi + 1, coli + 1);
-
-        newRow.push(mines);
-      }
-    });
-    newBoard.push(newRow);
-  });
-
-  return newBoard;
-  //</solution>
-}
 
 // ------------------------------------------------------------------------------------------------
 // TESTS
@@ -338,25 +313,74 @@ const minesweeper = (board) => {
 //
 // ------------------------------------------------------------------------------------------------
 
+
 describe('Testing challenge 1', () => {
-  test('It should return the number 14', () => {
-    expect(findFourteen(nestedArray)).toStrictEqual(14);
+  test('It should add the hourly totals array', () => {
+    expect(grandTotal(cookieStores)).toStrictEqual([88, 153, 252, 286, 139, 161, 145, 232, 276, 207, 161, 169]);
   });
-  test('It should also work for other input arrays', () => {
-    expect(findFourteen([[], [], [[0,1,2]]])).toStrictEqual(1);
-  })
 });
 
 describe('Testing challenge 2', () => {
-  test('It should return the number 24', () => {
-    expect(howManyTreats(errands)).toStrictEqual(24);
+  test('It should create an object of data for each store', () => {
+    expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
+      { sales: '88 cookies', time: '9 a.m.' },
+      { sales: '153 cookies', time: '10 a.m.' },
+      { sales: '252 cookies', time: '11 a.m.' },
+      { sales: '286 cookies', time: '12 p.m.' },
+      { sales: '139 cookies', time: '1 p.m.' },
+      { sales: '161 cookies', time: '2 p.m.' },
+      { sales: '145 cookies', time: '3 p.m.' },
+      { sales: '232 cookies', time: '4 p.m.' },
+      { sales: '276 cookies', time: '5 p.m.' },
+      { sales: '207 cookies', time: '6 p.m.' },
+      { sales: '161 cookies', time: '7 p.m.' },
+      { sales: '169 cookies', time: '8 p.m.' }
+    ]);
+
+    expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
   });
-  test('It should also work for other arrays of objects', () => {
-    expect(howManyTreats([0,0,{items: [0, {quantity: 7}]}])).toStrictEqual(7);
-  })
 });
 
 describe('Testing challenge 3', () => {
+  test('It should return a list of valentine exchanges', () => {
+    expect(giveValentines(['Jerry', 'George', 'Elaine', 'Kramer', 'Newman'])).toStrictEqual([
+      'Jerry gives a Valentine to George.',
+      'Jerry gives a Valentine to Elaine.',
+      'Jerry gives a Valentine to Kramer.',
+      'Jerry gives a Valentine to Newman.',
+      'George gives a Valentine to Jerry.',
+      'George gives a Valentine to Elaine.',
+      'George gives a Valentine to Kramer.',
+      'George gives a Valentine to Newman.',
+      'Elaine gives a Valentine to Jerry.',
+      'Elaine gives a Valentine to George.',
+      'Elaine gives a Valentine to Kramer.',
+      'Elaine gives a Valentine to Newman.',
+      'Kramer gives a Valentine to Jerry.',
+      'Kramer gives a Valentine to George.',
+      'Kramer gives a Valentine to Elaine.',
+      'Kramer gives a Valentine to Newman.',
+      'Newman gives a Valentine to Jerry.',
+      'Newman gives a Valentine to George.',
+      'Newman gives a Valentine to Elaine.',
+      'Newman gives a Valentine to Kramer.'
+    ]);
+  });
+});
+
+describe('Testing challenge 4', () => {
+  test('It should return the number 14', () => {
+    expect(findFourteen(nestedArray)).toStrictEqual(14);
+  });
+});
+
+describe('Testing challenge 5', () => {
+  test('It should return the number 24', () => {
+    expect(howManyTreats(errands)).toStrictEqual(24);
+  });
+});
+
+describe('Testing challenge 6', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
@@ -375,7 +399,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
+describe('Testing challenge 7', () => {
   test('It should multiply all the numbers together', () => {
     expect(calculateProduct([[1,2], [3,4], [5,6]])).toStrictEqual(720);
   });
@@ -388,54 +412,25 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+describe('Testing challenge 8', () => {
   test('It should calculate and return the average temperature of the data set', () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
 });
 
-describe('Testing challenge 6', () => {
+describe('Testing challenge 9', () => {
   test('It should return the lowest weekly average temperature within the data set', () => {
     expect(lowestWeeklyAverage(weeklyTemperatures)).toStrictEqual(57);
     expect(lowestWeeklyAverage(lowestWeeklyTemperatureData)).toStrictEqual(46);
   });
 });
 
-describe('Testing challenge 7', () => {
+describe('Testing challenge 10', () => {
   test('It should return the total count for each row', () => {
     let result = excel('1,1,1\n4,4,4\n9,9,9');
     expect(result.length).toStrictEqual(3);
     expect(result[0]).toStrictEqual(3);
     expect(result[1]).toStrictEqual(12);
     expect(result[2]).toStrictEqual(27);
-  });
-});
-
-describe('Testing challenge 8', () => {
-  test('It should return true if there are three in a row', () => {
-    expect(detectTicTacToeWin([ ['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X'] ])).toStrictEqual(true);
-    expect(detectTicTacToeWin([ ['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
-  });
-
-  test('It should return false if there are not three in a row', () => {
-    expect(detectTicTacToeWin([ ['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X'] ])).toStrictEqual(false);
-  });
-});
-
-describe('Testing challenge 9', () => {
-  test('It should return the number of adjacent bombs', () => {
-    const minefield =
-    [ [ null, null, null, null, '*' ],
-      [ null, null, null, null, '*' ],
-      [ '*', null, null, null, null ],
-      [ null, null, null, '*', null ],
-      [ null, '*', null, null, null ] ];
-    const expected =
-      [ [0, 0, 0, 2, 9],
-        [1, 1, 0, 2, 9],
-        [9, 1, 1, 2, 2],
-        [2, 2, 2, 9, 1],
-        [1, 9, 2, 1, 1] ];
-    expect(minesweeper(minefield)).toStrictEqual(expected);
   });
 });

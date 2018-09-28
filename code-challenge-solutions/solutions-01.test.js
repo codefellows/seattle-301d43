@@ -12,7 +12,7 @@
 const pushIntoSecond = (arr) => {
   const second = [];
   //<solution>
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     second.push(arr[i]);
   }
 
@@ -26,16 +26,16 @@ const pushIntoSecond = (arr) => {
 // Write a function named addBonusPoints that takes in an array of raw test scores
 // and adds five bonus points to each score.
 //
-// Use the for...of syntax.
+// Use the "for...of" syntax.
 //
-// Return an array of scores that have had the bonus points added.
+// As we did in Challenge 1, return a new array of scores that have had the bonus points added.
 // ------------------------------------------------------------------------------------------------
 
 const addBonusPoints = (arr) => {
   //<solution>
   let bonusPoints = [];
 
-  for(let score of arr) {
+  for (let score of arr) {
     bonusPoints.push(score + 5);
   }
 
@@ -48,16 +48,16 @@ const addBonusPoints = (arr) => {
 //
 // Write a function named addCurve that takes in an array of raw test scores and increases each score by 5%.
 //
-// Use the for...in syntax.
+// Use the "for...in" syntax.
 //
-// Return an array of curved scores;
+// As we did in Challenge 1, return a new array of curved scores.
 // ------------------------------------------------------------------------------------------------
 
 const addCurve = (arr) => {
   //<solution>
   let curvedScores = [];
 
-  for(let score in arr) {
+  for (let score in arr) {
     curvedScores.push(arr[score] * 1.05);
   }
 
@@ -89,7 +89,7 @@ const speaker = (message, callback) => {
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
 //
-// Write a function named addValues that takes in an array and a value and adds the value to the array.
+// Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
 //
 // Then, write a function named addNumbers that takes in four arguments:
 //   - A number to be added to an array
@@ -111,7 +111,7 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   //<solution>
-  for(let i = 0; i < times; i++) {
+  for (let i = 0; i < times; i++) {
     callback(arr, num);
   }
   return arr;
@@ -132,19 +132,19 @@ const addNumbers = (num, arr, times, callback) => {
 // Return the modified array.
 // ------------------------------------------------------------------------------------------------
 
-const removeOne = (num, input) => {
+const removeOne = (num, arr) => {
   //<solution>
-  if(num % 3 === 2) input.pop();
+  if (num % 3 === 2) arr.pop();
   //</solution>
 }
 
-const removeElements = (input, callback) => {
+const removeElements = (arr, callback) => {
   //<solution>
-  for(let i = 0; i < input.length; i++) {
-    callback(input[i], input);
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], arr);
   }
 
-  return input;
+  return arr;
   //</solution>
 }
 
@@ -154,11 +154,11 @@ const removeElements = (input, callback) => {
 // Write a function named removeWithForEach that produces the same output as challenge 6, but uses forEach.
 // ------------------------------------------------------------------------------------------------
 
-const removeWithForEach = (input, callback) => {
+const removeWithForEach = (arr, callback) => {
   //<solution>
-  input.forEach(number => callback(number, input));
+  arr.forEach(number => callback(number, arr));
 
-  return input;
+  return arr;
   //</solution>
 }
 
@@ -175,8 +175,8 @@ const removeWithForEach = (input, callback) => {
 
 const removeWithAnon = (input) => {
   //<solution>
-  input.forEach(function(number, idx, arr) {
-    if(number % 3 === 2) {
+  input.forEach(function(ele, idx, arr) {
+    if (ele % 3 === 2) {
       arr.pop();
     }
   });
@@ -208,7 +208,7 @@ const createList = (availableItems) => {
   let list = [];
 
   availableItems.forEach(item => {
-    if(item.available) {
+    if (item.available) {
       list.push(item.name)
     }
   })
@@ -236,7 +236,7 @@ const fizzbuzz = (arr) => {
   let output = [];
 
   arr.forEach(num => {
-    if(num % 5 === 0 && num % 3 === 0) {
+    if (num % 5 === 0 && num % 3 === 0) {
       output.push('Fizz Buzz');
     } else if (num % 3 === 0) {
       output.push('Fizz');
@@ -264,20 +264,20 @@ const fizzbuzz = (arr) => {
 
 describe('Testing challenge 1', () => {
   test('It should push all of the elements from the first array into the second array', () => {
-    expect(pushIntoSecond([1, 2, 3, 4, 5])).toStrictEqual([ 1, 2, 3, 4, 5 ]);
+    expect(pushIntoSecond([1, 2, 3, 4, 5])).toStrictEqual([1, 2, 3, 4, 5]);
   });
 });
 
 describe('Testing challenge 2', () => {
   test('It should add five bonus points to each raw score', () => {
-    expect(addBonusPoints([55, 79, 100, 85, 92])).toStrictEqual([ 60, 84, 105, 90, 97 ]);
+    expect(addBonusPoints([55, 79, 100, 85, 92])).toStrictEqual([60, 84, 105, 90, 97]);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should increase each raw score by 5%', () => {
     const resultScores = addCurve([55, 79, 100, 85, 92]);
-    const expectedScores = [ 57.75, 82.95, 105, 89.25, 96.60000000000001 ];
+    const expectedScores = [57.75, 82.95, 105, 89.25, 96.60000000000001];
     for (let i in expectedScores) {
       expect(resultScores[i]).toBeCloseTo(expectedScores[i]);
     }
@@ -292,37 +292,37 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
-    expect(addNumbers(8, [], 5, addValues)).toStrictEqual([ 8, 8, 8, 8, 8 ]);
+    expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
   });
 });
 
 describe('Testing challenge 6', () => {
   test('It should remove three elements from the array', () => {
-    expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
+    expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeElements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
 describe('Testing challenge 7', () => {
   test('It should remove three elements from the array', () => {
-    expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
+    expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
   });
 });
 
 describe('Testing challenge 8', () => {
   test('It should remove three elements from the array', () => {
-    expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
+    expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
     expect(removeWithAnon([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(7);
   });
 });
 
 describe('Testing challenge 9', () => {
-  const inventory = [ { name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false } ];
+  const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {
-    expect(createList(inventory)).toStrictEqual([ 'apples', 'pears', 'bananas' ]);
+    expect(createList(inventory)).toStrictEqual(['apples', 'pears', 'bananas']);
     expect(createList(inventory).length).toStrictEqual(3);
   });
 });
@@ -331,7 +331,7 @@ describe('Testing challenge 10', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
-    expect(fizzbuzz(inputs)).toStrictEqual([ 1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16 ]);
+    expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
 });
